@@ -13,6 +13,11 @@ dependencies:
   plugin_platform_interface: ^2.0.2
   google_mobile_ads: ^2.3.0
 
+  inf_flutter_logger:
+    git:
+      url: https://github.com/inftex/inf_flutter_logger.git
+      ref: 0.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

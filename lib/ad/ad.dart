@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
+import 'package:inf_flutter_logger/logger.dart';
 
 import 'ad_listener.dart';
 import 'ad_request.dart';
@@ -42,29 +43,29 @@ class BannerAd extends Ad {
       listener: gma.BannerAdListener(
         // Called when an ad is successfully received.
         onAdLoaded: (gma.Ad ad) {
-          print('$_logPrefix Ad loaded.');
+          Logger.info('$_logPrefix Ad loaded.');
           listener?.onAdLoaded?.call(this);
         },
         // Called when an ad request failed.
         onAdFailedToLoad: (gma.Ad ad, gma.LoadAdError error) {
           // Dispose the ad here to free resources.
           ad.dispose();
-          print('$_logPrefix Ad failed to load: $error');
+          Logger.info('$_logPrefix Ad failed to load: $error');
           listener?.onAdFailedToLoad?.call(this, error.toString());
         },
         // Called when an ad opens an overlay that covers the screen.
         onAdOpened: (gma.Ad ad) {
-          print('$_logPrefix Ad opened.');
+          Logger.info('$_logPrefix Ad opened.');
           listener?.onAdOpened?.call(this);
         },
         // Called when an ad removes an overlay that covers the screen.
         onAdClosed: (gma.Ad ad) {
-          print('$_logPrefix Ad closed.');
+          Logger.info('$_logPrefix Ad closed.');
           listener?.onAdClosed?.call(this);
         },
         // Called when an impression occurs on the ad.
         onAdImpression: (gma.Ad ad) {
-          print('$_logPrefix Ad impression.');
+          Logger.info('$_logPrefix Ad impression.');
           listener?.onAdImpression?.call(this);
         },
       ),
@@ -110,19 +111,19 @@ class InterstitialAd extends Ad {
           onAdLoaded: (gma.InterstitialAd ad) {
             // Keep a reference to the ad so you can show it later.
             _interstitialAd = ad;
-            print('$_logPrefix Ad loaded.');
+            Logger.info('$_logPrefix Ad loaded.');
             listener?.onAdLoaded?.call(this);
 
             _interstitialAd?.fullScreenContentCallback =
                 gma.FullScreenContentCallback(
               onAdShowedFullScreenContent: (gma.InterstitialAd ad) {
-                print('$_logPrefix %ad onAdShowedFullScreenContent.');
+                Logger.info('$_logPrefix %ad onAdShowedFullScreenContent.');
                 (listener as InterstitialAdListener?)
                     ?.onAdShowedFullScreenContent
                     ?.call(this);
               },
               onAdDismissedFullScreenContent: (gma.InterstitialAd ad) {
-                print('$_logPrefix $ad onAdDismissedFullScreenContent.');
+                Logger.info('$_logPrefix $ad onAdDismissedFullScreenContent.');
                 ad.dispose();
                 (listener as InterstitialAdListener?)
                     ?.onAdDismissedFullScreenContent
@@ -130,7 +131,7 @@ class InterstitialAd extends Ad {
               },
               onAdFailedToShowFullScreenContent:
                   (gma.InterstitialAd ad, gma.AdError error) {
-                print(
+                Logger.info(
                     '$_logPrefix $ad onAdFailedToShowFullScreenContent: $error');
                 ad.dispose();
                 (listener as InterstitialAdListener?)
@@ -138,7 +139,7 @@ class InterstitialAd extends Ad {
                     ?.call(this, error.toString());
               },
               onAdImpression: (gma.InterstitialAd ad) {
-                print('$_logPrefix $ad impression occurred.');
+                Logger.info('$_logPrefix $ad impression occurred.');
                 listener?.onAdImpression?.call(this);
               },
             );

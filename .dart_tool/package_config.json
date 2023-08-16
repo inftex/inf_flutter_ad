@@ -62,6 +62,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "inf_flutter_logger",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/git/inf_flutter_logger-a3eb8438fddf11128d37388e070c6de93ab92346/",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-02-15T14:26:38.600422Z",
+  "generated": "2023-08-16T16:24:51.366184Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

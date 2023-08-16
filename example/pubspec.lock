@@ -81,6 +81,15 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  inf_flutter_logger:
+    dependency: transitive
+    description:
+      path: "."
+      ref: "0.0.1"
+      resolved-ref: a3eb8438fddf11128d37388e070c6de93ab92346
+      url: "https://github.com/inftex/inf_flutter_logger.git"
+    source: git
+    version: "0.0.1"
   lints:
     dependency: transitive
     description:

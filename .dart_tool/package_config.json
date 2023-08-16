@@ -57,7 +57,7 @@
     },
     {
       "name": "google_mobile_ads",
-      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-2.3.0",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -158,13 +158,37 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "webview_flutter",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-4.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_android",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_android-3.9.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_platform_interface",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_platform_interface-2.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_wkwebview",
+      "rootUri": "file:///Users/baotran/Documents/Business/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_wkwebview-3.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "inf_flutter_ad",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-08-16T16:24:51.366184Z",
+  "generated": "2023-08-16T16:54:34.523213Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

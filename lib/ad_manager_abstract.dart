@@ -1,6 +1,9 @@
-import 'ad/ad.dart';
-import 'ad/ad_listener.dart';
-import 'ad/ad_request.dart';
+import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
+import 'package:inf_flutter_ad/ad/ad_listener/banner_ad_listener.dart';
+import 'package:inf_flutter_ad/ad/ad_listener/interstitial_ad_listener.dart';
+
+import 'ad/ad_type/ad.dart';
+import 'ad/ad_request/ad_request.dart';
 
 abstract class IAdManager {
   ///
@@ -25,5 +28,14 @@ abstract class IAdManager {
     required String? adUnitId,
     AdRequest? request,
     InterstitialAdListener? listener,
+  });
+
+  ///
+  /// load app open ad
+  ///
+  void loadAppOpenAd({
+    required String? adUnitId,
+    AdRequest? request,
+    AppOpenAdListener? listener,
   });
 }

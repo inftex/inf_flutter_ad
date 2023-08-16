@@ -51,7 +51,7 @@ class AdManager extends IAdManager {
   }
 
   @override
-  Ad loadAppOpenAd(
+  Ad createAppOpenAd(
       {required String? adUnitId,
       AdRequest? request,
       AppOpenAdListener? listener}) {

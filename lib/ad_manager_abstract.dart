@@ -33,7 +33,7 @@ abstract class IAdManager {
   ///
   /// load app open ad
   ///
-  void loadAppOpenAd({
+  Ad createAppOpenAd({
     required String? adUnitId,
     AdRequest? request,
     AppOpenAdListener? listener,

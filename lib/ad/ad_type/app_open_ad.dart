@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
@@ -6,7 +5,7 @@ import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
 import 'package:inf_flutter_logger/logger.dart';
 
 class AppOpenAd extends Ad {
-  late gma.AppOpenAd _appOpen;
+  late gma.AppOpenAd? _appOpen;
 
   String get _logPrefix => 'AppOpen';
 
@@ -19,9 +18,6 @@ class AppOpenAd extends Ad {
           request: request,
           listener: listener,
         ) {}
-
-  @override
-  Widget get widget => const SizedBox();
 
   @override
   void load() {
@@ -45,7 +41,12 @@ class AppOpenAd extends Ad {
   }
 
   @override
+  void show() {
+    _appOpen?.show();
+  }
+
+  @override
   void dispose() {
-    _appOpen.dispose();
+    _appOpen?.dispose();
   }
 }

@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  google_mobile_ads: ^3.0.0
+  google_mobile_ads: ^2.3.0
 
   inf_flutter_logger:
     git:

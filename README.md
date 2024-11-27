@@ -3,4 +3,4 @@
 ## Getting Started
 Read [Google Ad](https://pub.dev/packages/google_mobile_ads)
 
-Read IAdManager
+Read IAdManager & copy example/lib/ad_service.dart to use

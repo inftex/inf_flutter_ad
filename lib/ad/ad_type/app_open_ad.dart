@@ -23,7 +23,7 @@ class AppOpenAd extends Ad {
   void load() {
     gma.AppOpenAd.load(
       adUnitId: adUnitId,
-      orientation: gma.AppOpenAd.orientationPortrait,
+      // orientation: gma.AppOpenAd.orientationPortrait,
       request: const gma.AdRequest(),
       adLoadCallback: gma.AppOpenAdLoadCallback(
         onAdLoaded: (ad) {

@@ -62,12 +62,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "inf_flutter_logger",
-      "rootUri": "file:///Users/baotran/.pub-cache/git/inf_flutter_logger-a3eb8438fddf11128d37388e070c6de93ab92346/",
-      "packageUri": "lib/",
-      "languageVersion": "2.18"
-    },
-    {
       "name": "leak_tracker",
       "rootUri": "file:///Users/baotran/.pub-cache/hosted/pub.dev/leak_tracker-10.0.5",
       "packageUri": "lib/",
@@ -188,7 +182,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2024-11-27T14:51:03.494693Z",
+  "generated": "2025-02-28T03:27:49.891958Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/baotran/Documents/sdk/flutter3.24.0",

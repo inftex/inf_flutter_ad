@@ -1,13 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
 import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
-import 'package:inf_flutter_logger/logger.dart';
 
 class AppOpenAd extends Ad {
   late gma.AppOpenAd? _appOpen;
 
-  String get _logPrefix => 'AppOpen';
+  String get _logPrefix => '[AppOpen]';
 
   AppOpenAd({
     required String adUnitId,
@@ -28,12 +28,12 @@ class AppOpenAd extends Ad {
       adLoadCallback: gma.AppOpenAdLoadCallback(
         onAdLoaded: (ad) {
           _appOpen = ad;
-          Logger.info('$_logPrefix Ad loaded.');
+          debugPrint('$_logPrefix Ad loaded.');
           listener?.onAdLoaded?.call(this);
         },
         onAdFailedToLoad: (error) {
           dispose();
-          Logger.info('$_logPrefix Ad failed to load: $error');
+          debugPrint('$_logPrefix Ad failed to load: $error');
           listener?.onAdFailedToLoad?.call(this, error.toString());
         },
       ),

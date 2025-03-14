@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/rewarded_ad_listener.dart';

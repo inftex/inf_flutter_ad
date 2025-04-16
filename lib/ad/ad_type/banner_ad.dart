@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/banner_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
+import 'package:inf_flutter_ad/ad/ad_size/ad_size.dart';
 import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
 
 class BannerAd extends Ad {
@@ -12,6 +13,7 @@ class BannerAd extends Ad {
   BannerAd({
     required String adUnitId,
     AdRequest? request,
+    AdSize? adSize,
     BannerAdListener? listener,
   }) : super(
           adUnitId: adUnitId,
@@ -20,7 +22,7 @@ class BannerAd extends Ad {
         ) {
     _banner = gma.BannerAd(
       adUnitId: adUnitId,
-      size: gma.AdSize.banner,
+      size: adSize?.toGmaAdSize() ?? gma.AdSize.banner,
       request: gma.AdRequest(),
       listener: gma.BannerAdListener(
         // Called when an ad is successfully received.

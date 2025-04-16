@@ -6,6 +6,7 @@ import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/banner_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/interstitial_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/rewarded_ad_listener.dart';
+import 'package:inf_flutter_ad/ad/ad_size/ad_size.dart';
 import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
 import 'package:inf_flutter_ad/ad/ad_type/app_open_ad.dart';
@@ -32,11 +33,13 @@ class AdManager extends IAdManager {
   @override
   Ad createBannerAd({
     required String? adUnitId,
+    AdSize? adSize,
     AdRequest? request,
     BannerAdListener? listener,
   }) {
     return BannerAd(
         adUnitId: _getBannerAdUnitId(adUnitId),
+        adSize: adSize,
         request: request,
         listener: listener);
   }

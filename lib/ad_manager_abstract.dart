@@ -2,6 +2,7 @@ import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/banner_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/interstitial_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/rewarded_ad_listener.dart';
+import 'package:inf_flutter_ad/ad/ad_size/ad_size.dart';
 
 import 'ad/ad_type/ad.dart';
 import 'ad/ad_request/ad_request.dart';
@@ -18,6 +19,7 @@ abstract class IAdManager {
   ///
   Ad createBannerAd({
     required String? adUnitId,
+    AdSize? adSize,
     AdRequest? request,
     BannerAdListener? listener,
   });

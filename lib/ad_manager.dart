@@ -5,13 +5,16 @@ import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/app_open_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/banner_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/interstitial_ad_listener.dart';
+import 'package:inf_flutter_ad/ad/ad_listener/native_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_listener/rewarded_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_size/ad_size.dart';
+import 'package:inf_flutter_ad/ad/ad_template/ad_template.dart';
 import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
 import 'package:inf_flutter_ad/ad/ad_type/app_open_ad.dart';
 import 'package:inf_flutter_ad/ad/ad_type/banner_ad.dart';
 import 'package:inf_flutter_ad/ad/ad_type/interstitial_ad.dart';
+import 'package:inf_flutter_ad/ad/ad_type/native_ad.dart';
 import 'package:inf_flutter_ad/ad/ad_type/rewared_ad.dart';
 
 import 'ad_manager_abstract.dart';
@@ -77,6 +80,19 @@ class AdManager extends IAdManager {
         listener: listener);
   }
 
+  @override
+  Ad createNativeAd(
+      {required String? adUnitId,
+      AdTemplate? adTemplate,
+      AdRequest? request,
+      NativeAdListener? listener}) {
+    return NativeAd(
+        adUnitId: _getNativeAdUnitId(adUnitId),
+        adTemplate: adTemplate,
+        request: request,
+        listener: listener);
+  }
+
   ///
   /// Sample ad unit id: https://developers.google.com/admob/android/test-ads#sample_ad_units
   ///
@@ -119,6 +135,17 @@ class AdManager extends IAdManager {
         return 'ca-app-pub-3940256099942544/5224354917';
       } else if (Platform.isIOS) {
         return 'ca-app-pub-3940256099942544/1712485313';
+      }
+    }
+    return adUnitId!;
+  }
+
+  String _getNativeAdUnitId(String? adUnitId) {
+    if (kDebugMode || adUnitId == null) {
+      if (Platform.isAndroid) {
+        return 'ca-app-pub-3940256099942544/2247696110';
+      } else if (Platform.isIOS) {
+        return 'ca-app-pub-3940256099942544/3986624511';
       }
     }
     return adUnitId!;

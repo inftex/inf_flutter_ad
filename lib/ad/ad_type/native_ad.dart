@@ -39,32 +39,33 @@ class NativeAd extends Ad {
         request: const gma.AdRequest(),
         // Styling
         nativeTemplateStyle: gma.NativeTemplateStyle(
-            // Required: Choose a template.
-            templateType:
-                adTemplate?.toGmaAdTemplateType() ?? gma.TemplateType.medium,
-            // Optional: Customize the ad's style.
-            mainBackgroundColor: Colors.purple,
-            cornerRadius: 16,
-            callToActionTextStyle: gma.NativeTemplateTextStyle(
-                textColor: Colors.cyan,
-                backgroundColor: Colors.red,
-                style: gma.NativeTemplateFontStyle.monospace,
-                size: 16.0),
-            primaryTextStyle: gma.NativeTemplateTextStyle(
-                textColor: Colors.red,
-                backgroundColor: Colors.cyan,
-                style: gma.NativeTemplateFontStyle.italic,
-                size: 16.0),
-            secondaryTextStyle: gma.NativeTemplateTextStyle(
-                textColor: Colors.green,
-                backgroundColor: Colors.black,
-                style: gma.NativeTemplateFontStyle.bold,
-                size: 16.0),
-            tertiaryTextStyle: gma.NativeTemplateTextStyle(
-                textColor: Colors.brown,
-                backgroundColor: Colors.amber,
-                style: gma.NativeTemplateFontStyle.normal,
-                size: 16.0)));
+          // Required: Choose a template.
+          templateType:
+              adTemplate?.toGmaAdTemplateType() ?? gma.TemplateType.medium,
+          // Optional: Customize the ad's style.
+          // mainBackgroundColor: Colors.purple,
+          // cornerRadius: 16,
+          // callToActionTextStyle: gma.NativeTemplateTextStyle(
+          //     textColor: Colors.cyan,
+          //     backgroundColor: Colors.red,
+          //     style: gma.NativeTemplateFontStyle.monospace,
+          //     size: 16.0),
+          // primaryTextStyle: gma.NativeTemplateTextStyle(
+          //     textColor: Colors.red,
+          //     backgroundColor: Colors.cyan,
+          //     style: gma.NativeTemplateFontStyle.italic,
+          //     size: 16.0),
+          // secondaryTextStyle: gma.NativeTemplateTextStyle(
+          //     textColor: Colors.green,
+          //     backgroundColor: Colors.black,
+          //     style: gma.NativeTemplateFontStyle.bold,
+          //     size: 16.0),
+          // tertiaryTextStyle: gma.NativeTemplateTextStyle(
+          //     textColor: Colors.brown,
+          //     backgroundColor: Colors.amber,
+          //     style: gma.NativeTemplateFontStyle.normal,
+          //     size: 16.0),
+        ));
     ;
   }
 
@@ -73,7 +74,7 @@ class NativeAd extends Ad {
       ? ConstrainedBox(
           constraints: const BoxConstraints(
             minWidth: 320, // minimum recommended width
-            minHeight: 90, // minimum recommended height
+            // minHeight: 90, // minimum recommended height
             maxWidth: 400,
             maxHeight: 200,
           ),
@@ -82,7 +83,7 @@ class NativeAd extends Ad {
       : ConstrainedBox(
           constraints: const BoxConstraints(
             minWidth: 320, // minimum recommended width
-            minHeight: 320, // minimum recommended height
+            // minHeight: 320, // minimum recommended height
             maxWidth: 400,
             maxHeight: 400,
           ),

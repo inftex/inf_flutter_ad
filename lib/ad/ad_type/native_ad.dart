@@ -73,23 +73,21 @@ class NativeAd extends Ad {
   Widget get widget {
     // return gma.AdWidget(ad: _nativeAd);
     return _adTemplate?.type == AdTemplateType.small
-        ? Container(
-            alignment: Alignment.center,
+        ? ConstrainedBox(
             constraints: const BoxConstraints(
               minWidth: 320, // minimum recommended width
               minHeight: 90, // minimum recommended height
               maxWidth: 400,
-              maxHeight: 200,
+              maxHeight: 110,
             ),
             child: gma.AdWidget(ad: _nativeAd),
           )
-        : Container(
-            alignment: Alignment.center,
+        : ConstrainedBox(
             constraints: const BoxConstraints(
               minWidth: 320, // minimum recommended width
               minHeight: 320, // minimum recommended height
               maxWidth: 400,
-              maxHeight: 400,
+              maxHeight: 360,
             ),
             child: gma.AdWidget(ad: _nativeAd),
           );

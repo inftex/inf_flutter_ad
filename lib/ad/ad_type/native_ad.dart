@@ -43,8 +43,8 @@ class NativeAd extends Ad {
           templateType:
               adTemplate?.toGmaAdTemplateType() ?? gma.TemplateType.medium,
           // Optional: Customize the ad's style.
-          mainBackgroundColor: Colors.transparent,
-          cornerRadius: 16,
+          mainBackgroundColor: Colors.white,
+          // cornerRadius: 16,
           // callToActionTextStyle: gma.NativeTemplateTextStyle(
           //     textColor: Colors.cyan,
           //     backgroundColor: Colors.red,
@@ -72,25 +72,27 @@ class NativeAd extends Ad {
   @override
   Widget get widget {
     // return gma.AdWidget(ad: _nativeAd);
-    return _adTemplate?.type == AdTemplateType.small
-        ? ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: 320, // minimum recommended width
-              minHeight: 90, // minimum recommended height
-              maxWidth: 400,
-              maxHeight: _isTablet() ? 200 : 110,
+    return Center(
+      child: _adTemplate?.type == AdTemplateType.small
+          ? ConstrainedBox(
+              constraints: const BoxConstraints(
+                minWidth: 320, // minimum recommended width
+                minHeight: 90, // minimum recommended height
+                maxWidth: 400,
+                maxHeight: 110,
+              ),
+              child: gma.AdWidget(ad: _nativeAd),
+            )
+          : ConstrainedBox(
+              constraints: const BoxConstraints(
+                minWidth: 320, // minimum recommended width
+                minHeight: 320, // minimum recommended height
+                maxWidth: 400,
+                maxHeight: 360,
+              ),
+              child: gma.AdWidget(ad: _nativeAd),
             ),
-            child: gma.AdWidget(ad: _nativeAd),
-          )
-        : ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: 320, // minimum recommended width
-              minHeight: 320, // minimum recommended height
-              maxWidth: 400,
-              maxHeight: _isTablet() ? 400 : 360,
-            ),
-            child: gma.AdWidget(ad: _nativeAd),
-          );
+    );
   }
 
   @override
@@ -101,15 +103,5 @@ class NativeAd extends Ad {
   @override
   void dispose() {
     _nativeAd.dispose();
-  }
-
-  bool _isTablet() {
-    try {
-      final data = MediaQueryData.fromView(
-          WidgetsBinding.instance.platformDispatcher.views.first);
-      final shortestSide = data.size.shortestSide;
-      return shortestSide >= 600; // Common tablet breakpoint
-    } catch (e) {}
-    return false;
   }
 }

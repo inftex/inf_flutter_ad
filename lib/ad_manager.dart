@@ -34,7 +34,8 @@ class AdManager extends IAdManager {
   Future<void> setup() async {
     final initializationStatus = await gma.MobileAds.instance.initialize();
     initializationStatus.adapterStatuses.forEach((key, value) {
-      debugPrint('$_logPrefix Adapter status for $key: ${value.description}');
+      debugPrint(
+          '$_logPrefix Adapter status for $key: ${value.description}, ${value.state}, ${value.latency}');
     });
   }
 

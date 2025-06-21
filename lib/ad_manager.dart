@@ -20,6 +20,8 @@ import 'package:inf_flutter_ad/ad/ad_type/rewared_ad.dart';
 import 'ad_manager_abstract.dart';
 
 class AdManager extends IAdManager {
+  String get _logPrefix => '[AdManager]';
+
   static AdManager? _instance;
   static AdManager get instance {
     _instance ??= AdManager._();
@@ -29,8 +31,11 @@ class AdManager extends IAdManager {
   AdManager._();
 
   @override
-  void setup() {
-    gma.MobileAds.instance.initialize();
+  Future<void> setup() async {
+    final initializationStatus = await gma.MobileAds.instance.initialize();
+    initializationStatus.adapterStatuses.forEach((key, value) {
+      debugPrint('$_logPrefix Adapter status for $key: ${value.description}');
+    });
   }
 
   @override

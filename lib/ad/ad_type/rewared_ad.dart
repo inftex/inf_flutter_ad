@@ -60,7 +60,8 @@ class RewaredAd extends Ad {
               (listener as RewardedAdListener?)?.onAdClicked?.call(this);
             });
 
-            debugPrint('$_logPrefix Ad loaded.');
+            debugPrint(
+                '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
             _rewardedAd = ad;
             listener?.onAdLoaded?.call(this);
           },

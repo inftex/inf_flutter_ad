@@ -24,7 +24,8 @@ class InterstitialAd extends Ad {
           onAdLoaded: (gma.InterstitialAd ad) {
             // Keep a reference to the ad so you can show it later.
             _interstitialAd = ad;
-            debugPrint('$_logPrefix Ad loaded.');
+            debugPrint(
+                '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
             listener?.onAdLoaded?.call(this);
 
             _interstitialAd?.fullScreenContentCallback =

@@ -28,7 +28,8 @@ class AppOpenAd extends Ad {
       adLoadCallback: gma.AppOpenAdLoadCallback(
         onAdLoaded: (ad) {
           _appOpen = ad;
-          debugPrint('$_logPrefix Ad loaded.');
+          debugPrint(
+              '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
           listener?.onAdLoaded?.call(this);
         },
         onAdFailedToLoad: (error) {

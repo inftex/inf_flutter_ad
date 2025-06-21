@@ -26,7 +26,8 @@ class NativeAd extends Ad {
         adUnitId: adUnitId,
         listener: gma.NativeAdListener(
           onAdLoaded: (ad) {
-            debugPrint('$_logPrefix Ad loaded.');
+            debugPrint(
+                '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
             listener?.onAdLoaded?.call(this);
           },
           onAdFailedToLoad: (ad, error) {

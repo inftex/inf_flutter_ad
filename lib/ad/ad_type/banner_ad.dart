@@ -27,7 +27,8 @@ class BannerAd extends Ad {
       listener: gma.BannerAdListener(
         // Called when an ad is successfully received.
         onAdLoaded: (gma.Ad ad) {
-          debugPrint('$_logPrefix Ad loaded.');
+          debugPrint(
+              '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
           listener?.onAdLoaded?.call(this);
         },
         // Called when an ad request failed.

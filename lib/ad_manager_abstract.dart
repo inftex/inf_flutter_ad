@@ -17,6 +17,11 @@ abstract class IAdManager {
   void setup();
 
   ///
+  /// Config test devices
+  ///
+  Future<void> configTestDevices({required List<String> deviceIds});
+
+  ///
   /// Create banner object > load() > get its widget to show
   ///
   Ad createBannerAd({

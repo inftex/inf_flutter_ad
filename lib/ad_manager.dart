@@ -40,6 +40,15 @@ class AdManager extends IAdManager {
   }
 
   @override
+  Future<void> configTestDevices({required List<String> deviceIds}) async {
+    await gma.MobileAds.instance.updateRequestConfiguration(
+      gma.RequestConfiguration(
+        testDeviceIds: deviceIds,
+      ),
+    );
+  }
+
+  @override
   Ad createBannerAd({
     required String? adUnitId,
     AdSize? adSize,

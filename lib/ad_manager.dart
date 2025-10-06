@@ -31,7 +31,17 @@ class AdManager extends IAdManager {
   AdManager._();
 
   @override
-  Future<void> setup() async {
+  Future<void> setup({bool familySafe = false}) async {
+    if (familySafe) {
+      // Tell AdMob that the app targets children
+      gma.RequestConfiguration requestConfiguration = gma.RequestConfiguration(
+        tagForChildDirectedTreatment: gma.TagForChildDirectedTreatment.yes,
+        maxAdContentRating: gma.MaxAdContentRating.g,
+      );
+      await gma.MobileAds.instance
+          .updateRequestConfiguration(requestConfiguration);
+    }
+
     final initializationStatus = await gma.MobileAds.instance.initialize();
     initializationStatus.adapterStatuses.forEach((key, value) {
       debugPrint(

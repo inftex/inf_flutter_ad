@@ -14,7 +14,7 @@ abstract class IAdManager {
   /// Initialize
   /// MUST be called on app startup
   ///
-  void setup();
+  void setup({bool familySafe = false});
 
   ///
   /// Config test devices

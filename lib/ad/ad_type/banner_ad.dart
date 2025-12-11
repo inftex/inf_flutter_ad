@@ -23,7 +23,7 @@ class BannerAd extends Ad {
     _banner = gma.BannerAd(
       adUnitId: adUnitId,
       size: adSize?.toGmaAdSize() ?? gma.AdSize.banner,
-      request: gma.AdRequest(),
+      request: request?.toGmaAdRequest() ?? gma.AdRequest(),
       listener: gma.BannerAdListener(
         // Called when an ad is successfully received.
         onAdLoaded: (gma.Ad ad) {

@@ -1,16 +1,19 @@
+import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
 
-class BannerAdRequest extends AdRequest {
-  BannerAdRequest({Map<String, String>? extras}) : super(extras: extras);
-
-  factory BannerAdRequest.collapsibleTop() {
-    return BannerAdRequest(extras: {
+class CollapsibleTopBannerAdRequest extends AdRequest {
+  @override
+  gma.AdRequest toGmaAdRequest() {
+    return const gma.AdRequest(extras: {
       "collapsible": "top",
     });
   }
+}
 
-  factory BannerAdRequest.collapsibleBottom() {
-    return BannerAdRequest(extras: {
+class CollapsibleBottomBannerAdRequest extends AdRequest {
+  @override
+  gma.AdRequest toGmaAdRequest() {
+    return const gma.AdRequest(extras: {
       "collapsible": "bottom",
     });
   }

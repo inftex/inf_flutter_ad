@@ -3,6 +3,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 import 'package:inf_flutter_ad/ad/ad_listener/native_ad_listener.dart';
 import 'package:inf_flutter_ad/ad/ad_request/ad_request.dart';
 import 'package:inf_flutter_ad/ad/ad_template/ad_template.dart';
+import 'package:inf_flutter_ad/ad/ad_template/native_ad_template.dart';
 import 'package:inf_flutter_ad/ad/ad_type/ad.dart';
 
 class NativeAd extends Ad {
@@ -42,7 +43,7 @@ class NativeAd extends Ad {
         nativeTemplateStyle: gma.NativeTemplateStyle(
           // Required: Choose a template.
           templateType:
-              adTemplate?.toGmaAdTemplateType() ?? gma.TemplateType.medium,
+              adTemplate?.toGmaTemplateType() ?? gma.TemplateType.medium,
           // Optional: Customize the ad's style.
           mainBackgroundColor: Colors.white,
           // cornerRadius: 16,
@@ -74,7 +75,7 @@ class NativeAd extends Ad {
   Widget get widget {
     // return gma.AdWidget(ad: _nativeAd);
     return Center(
-      child: _adTemplate?.type == AdTemplateType.small
+      child: (_adTemplate is SmallNativeAdTemplate)
           ? ConstrainedBox(
               constraints: const BoxConstraints(
                 minWidth: 320, // minimum recommended width

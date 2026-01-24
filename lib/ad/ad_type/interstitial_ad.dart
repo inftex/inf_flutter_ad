@@ -32,24 +32,19 @@ class InterstitialAd extends Ad {
                 gma.FullScreenContentCallback(
               onAdShowedFullScreenContent: (gma.InterstitialAd ad) {
                 debugPrint('$_logPrefix %ad onAdShowedFullScreenContent.');
-                (listener as InterstitialAdListener?)
-                    ?.onAdShowedFullScreenContent
-                    ?.call(this);
+                listener?.onAdShowedFullScreenContent?.call(this);
               },
               onAdDismissedFullScreenContent: (gma.InterstitialAd ad) {
                 debugPrint('$_logPrefix $ad onAdDismissedFullScreenContent.');
                 ad.dispose();
-                (listener as InterstitialAdListener?)
-                    ?.onAdDismissedFullScreenContent
-                    ?.call(this);
+                listener?.onAdDismissedFullScreenContent?.call(this);
               },
               onAdFailedToShowFullScreenContent:
                   (gma.InterstitialAd ad, gma.AdError error) {
                 debugPrint(
                     '$_logPrefix $ad onAdFailedToShowFullScreenContent: $error');
                 ad.dispose();
-                (listener as InterstitialAdListener?)
-                    ?.onAdFailedToShowFullScreenContent
+                listener?.onAdFailedToShowFullScreenContent
                     ?.call(this, error.toString());
               },
               onAdImpression: (gma.InterstitialAd ad) {

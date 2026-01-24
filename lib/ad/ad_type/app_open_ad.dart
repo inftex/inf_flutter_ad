@@ -31,9 +31,28 @@ class AppOpenAd extends Ad {
           debugPrint(
               '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
           listener?.onAdLoaded?.call(this);
+
+          // prepare full screen content callback
+          _appOpen?.fullScreenContentCallback = gma.FullScreenContentCallback(
+            onAdShowedFullScreenContent: (ad) {
+              debugPrint('$_logPrefix onAdShowedFullScreenContent');
+              listener?.onAdShowedFullScreenContent?.call(this);
+            },
+            onAdFailedToShowFullScreenContent: (ad, error) {
+              debugPrint(
+                  '$_logPrefix onAdFailedToShowFullScreenContent: $error');
+              dispose();
+              listener?.onAdFailedToShowFullScreenContent
+                  ?.call(this, error.toString());
+            },
+            onAdDismissedFullScreenContent: (ad) {
+              debugPrint('$_logPrefix onAdDismissedFullScreenContent');
+              dispose();
+              listener?.onAdDismissedFullScreenContent?.call(this);
+            },
+          );
         },
         onAdFailedToLoad: (error) {
-          dispose();
           debugPrint('$_logPrefix Ad failed to load: $error');
           listener?.onAdFailedToLoad?.call(this, error.toString());
         },
@@ -49,5 +68,6 @@ class AppOpenAd extends Ad {
   @override
   void dispose() {
     _appOpen?.dispose();
+    _appOpen = null;
   }
 }

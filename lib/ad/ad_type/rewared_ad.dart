@@ -27,22 +27,19 @@ class RewaredAd extends Ad {
                 // Called when the ad showed the full screen content.
                 onAdShowedFullScreenContent: (ad) {
               debugPrint('$_logPrefix %ad onAdShowedFullScreenContent.');
-              (listener as RewardedAdListener?)
-                  ?.onAdShowedFullScreenContent
-                  ?.call(this);
+              listener?.onAdShowedFullScreenContent?.call(this);
             },
                 // Called when an impression occurs on the ad.
                 onAdImpression: (ad) {
               debugPrint('$_logPrefix %ad onAdImpression.');
-              (listener as RewardedAdListener?)?.onAdImpression?.call(this);
+              listener?.onAdImpression?.call(this);
             },
                 // Called when the ad failed to show full screen content.
                 onAdFailedToShowFullScreenContent: (ad, err) {
               // Dispose the ad here to free resources.
               ad.dispose();
               debugPrint('$_logPrefix %ad onAdFailedToShowFullScreenContent.');
-              (listener as RewardedAdListener?)
-                  ?.onAdFailedToShowFullScreenContent
+              listener?.onAdFailedToShowFullScreenContent
                   ?.call(this, err.toString());
             },
                 // Called when the ad dismissed full screen content.
@@ -50,14 +47,12 @@ class RewaredAd extends Ad {
               // Dispose the ad here to free resources.
               ad.dispose();
               debugPrint('$_logPrefix %ad onAdDismissedFullScreenContent.');
-              (listener as RewardedAdListener?)
-                  ?.onAdDismissedFullScreenContent
-                  ?.call(this);
+              listener?.onAdDismissedFullScreenContent?.call(this);
             },
                 // Called when a click is recorded for an ad.
                 onAdClicked: (ad) {
               debugPrint('$_logPrefix %ad onAdClicked.');
-              (listener as RewardedAdListener?)?.onAdClicked?.call(this);
+              listener?.onAdClicked?.call(this);
             });
 
             debugPrint(

@@ -69,10 +69,10 @@ class RewaredAd extends Ad {
   }
 
   @override
-  void show({Function? onUserEarned}) {
+  void show() {
     _rewardedAd?.show(
         onUserEarnedReward: (gma.AdWithoutView ad, gma.RewardItem rewardItem) {
-      onUserEarned?.call();
+      listener?.onUserEarnedReward?.call(this);
     });
   }
 

@@ -60,7 +60,7 @@ class InterstitialAd extends Ad {
   }
 
   @override
-  void show({Function? onUserEarned}) {
+  void show() {
     _interstitialAd?.show();
   }
 

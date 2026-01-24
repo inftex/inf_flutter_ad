@@ -18,6 +18,6 @@ abstract class Ad {
 
   Widget get widget => const SizedBox();
   void load();
-  void show({Function? onUserEarned}) {}
+  void show() {}
   void dispose();
 }

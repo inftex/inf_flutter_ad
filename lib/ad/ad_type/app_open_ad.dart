@@ -61,7 +61,7 @@ class AppOpenAd extends Ad {
   }
 
   @override
-  void show({Function? onUserEarned}) {
+  void show() {
     _appOpen?.show();
   }
 

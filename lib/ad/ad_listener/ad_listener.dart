@@ -10,6 +10,7 @@ abstract class AdListener {
   final Function(Ad ad)? onAdShowedFullScreenContent;
   final Function(Ad ad, String error)? onAdFailedToShowFullScreenContent;
   final Function(Ad ad)? onAdDismissedFullScreenContent;
+  final Function(Ad ad)? onUserEarnedReward;
 
   AdListener({
     this.onAdLoaded,
@@ -21,5 +22,6 @@ abstract class AdListener {
     this.onAdShowedFullScreenContent,
     this.onAdFailedToShowFullScreenContent,
     this.onAdDismissedFullScreenContent,
+    this.onUserEarnedReward,
   });
 }

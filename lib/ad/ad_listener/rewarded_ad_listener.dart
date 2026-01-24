@@ -10,6 +10,7 @@ class RewardedAdListener extends AdListener {
     Function(Ad ad)? onAdShowedFullScreenContent,
     Function(Ad ad, String error)? onAdFailedToShowFullScreenContent,
     Function(Ad ad)? onAdDismissedFullScreenContent,
+    Function(Ad ad)? onUserEarnedReward,
   }) : super(
             onAdLoaded: onAdLoaded,
             onAdFailedToLoad: onAdFailedToLoad,
@@ -18,5 +19,6 @@ class RewardedAdListener extends AdListener {
             onAdShowedFullScreenContent: onAdShowedFullScreenContent,
             onAdFailedToShowFullScreenContent:
                 onAdFailedToShowFullScreenContent,
-            onAdDismissedFullScreenContent: onAdDismissedFullScreenContent);
+            onAdDismissedFullScreenContent: onAdDismissedFullScreenContent,
+            onUserEarnedReward: onUserEarnedReward);
 }

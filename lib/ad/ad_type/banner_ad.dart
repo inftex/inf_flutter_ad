@@ -26,9 +26,11 @@ class BannerAd extends Ad {
       request: request?.toGmaAdRequest() ?? gma.AdRequest(),
       listener: gma.BannerAdListener(
         // Called when an ad is successfully received.
-        onAdLoaded: (gma.Ad ad) {
+        onAdLoaded: (gma.Ad ad) async {
+          final gmaBanner = ad as gma.BannerAd;
           debugPrint(
-              '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}');
+              '$_logPrefix Ad loaded: ${ad.responseInfo?.mediationAdapterClassName}, is ${await gmaBanner.isCollapsible ? "" : "not"} collapsible.');
+
           listener?.onAdLoaded?.call(this);
         },
         // Called when an ad request failed.

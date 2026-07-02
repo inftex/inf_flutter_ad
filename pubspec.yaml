@@ -4,14 +4,14 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: ">=2.18.2 <4.0.0"
+  sdk: ">=2.18.2 <3.9.0"
   flutter: ">=2.5.0"
 
 dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  google_mobile_ads: 8.0.0
+  google_mobile_ads: 6.0.0
 
 dev_dependencies:
   flutter_test:

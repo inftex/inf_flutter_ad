@@ -81,7 +81,7 @@ class NativeAd extends Ad {
                 minWidth: 320, // minimum recommended width
                 minHeight: 90, // minimum recommended height
                 maxWidth: 400,
-                maxHeight: 200,
+                maxHeight: 110,
               ),
               child: gma.AdWidget(ad: _nativeAd),
             )
@@ -90,7 +90,7 @@ class NativeAd extends Ad {
                 minWidth: 320, // minimum recommended width
                 minHeight: 320, // minimum recommended height
                 maxWidth: 400,
-                maxHeight: 400,
+                maxHeight: 360,
               ),
               child: gma.AdWidget(ad: _nativeAd),
             ),
